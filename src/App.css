@@ -1,0 +1,33 @@
+#root #light {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  #root #dark {
+    max-width: 1280px;
+    height: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    color: #ffffff;
+  }
+  #root #dark #head {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  #light {
+    background-color: #ffffff;
+  }
+  #dark {
+    background-color: #000000;
+  }
+
+  #light.main {
+    background-color: #e20000;
+    
+  }
+
+ 
+  
+  
