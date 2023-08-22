@@ -4,38 +4,36 @@ import play from '../assets/dictionary-web-app/dictionary-web-app/assets/images/
 import { PropTypes } from 'prop-types'
 import { Body2 } from './Body2'
 import { Body3 } from './Body3'
-import { useState, useEffect } from 'react'
-import sound from '../assets/pop.mp3'
+import { useRef } from 'react'
+
 //import useWordAPI from './useWordApi'
 
 
 
 export const Body1 = ({wordData}) => {
 
-    const[value, setvalue] = useState(1)
+    const audioRef = useRef(null);
 
-    useEffect(() => {
-        if(value % 2 === 0)
-            playWord()
-    },[value])
-
-    function playWord() {
-        const audio = new Audio(sound);
-        audio.currentTime = 0;
-        audio.play();
+    const handlePlay = () =>{
+        audioRef.current.play();
     }
+
   return (
     <>
         
         <div className="mt-8 flex justify-between">
             <div className="float-left">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl">{wordData?.[0].word}</h1>
-                <h2 className="float-left text-[#A445ED] text-xl md:text-3xl lg:text-3xl xl:text-4xl mt-1 lg:mt-4 xl:mt-5 md:mt-2">{wordData?.[0].phonetic}</h2>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">{wordData?.[0].word}</h1>
+                <h2 className="float-left text-[#A445ED] text-lg md:text-lg lg:text-xl xl:text-2xl mt-1 lg:mt-4 xl:mt-5 md:mt-2">{wordData?.[0].phonetic}</h2>
             </div>
 
             <div>
-
-                <img onClick={() => setvalue(value+1)} src={play} alt="Logo" width={48} height={48} className=' hover:fill-[#971ff3] md:w-[73px] xl:w-[90px] lg:w-[82px] md:mr-6 lg:mr-6 xl:mr-6 '/>
+                <button onClick={handlePlay}>
+                   <img src={play} alt="Logo" width={40} height={40} className=' hover:fill-[#971ff3] md:w-[65px] xl:w-[75px] lg:w-[70px] md:mr-6 lg:mr-6 xl:mr-6 '/> 
+                </button>
+                <audio ref={audioRef}>
+                    <source src={wordData?.[0].phonetics[0].audio} type='audio/mp3'/>
+                </audio>     
             </div>
             
         </div>

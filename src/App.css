@@ -12,9 +12,33 @@
     text-align: center;
     color: #ffffff;
   }
-  #root #dark #head {
+  #root #dark #sans {
     background-color: #000000;
     color: #ffffff;
+    font-family: sans-serif;
+  }
+  #root #light #sans {
+    color: #000000;
+    font-family: sans-serif;
+  }
+  #root #dark #serif {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: serif;
+  }
+  #root #light #serif {
+    color: #000000;
+    font-family: sans-serif;
+  }
+  #root #dark #mono {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: monospace;
+  }
+
+  #root #light #mono {
+    color: #000000;
+    font-family: monospace;
   }
   #light {
     background-color: #ffffff;
@@ -23,10 +47,8 @@
     background-color: #000000;
   }
 
-  #light.main {
-    background-color: #e20000;
-    
-  }
+
+
 
  
   
