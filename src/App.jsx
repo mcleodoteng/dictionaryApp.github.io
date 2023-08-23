@@ -1,9 +1,7 @@
 import './App.css'
-
 import HomePage from './components/HomePage';
 import logo from '../src/assets/dictionary-web-app/dictionary-web-app/assets/images/logo.svg'
 import moon from '../src/assets/dictionary-web-app/dictionary-web-app/assets/images/icon-moon.svg'
-
 import ReactSwitch from "react-switch"
 import { createContext, useState } from 'react';
 export const ThemeContext = createContext(null);
